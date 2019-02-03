@@ -13,6 +13,11 @@ public class RotatingPlatform : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
+        if (Input.GetKeyDown("space"))
+        {
+            transform.Rotate(Vector3.forward * -180);
+        }
         
     }
 }
