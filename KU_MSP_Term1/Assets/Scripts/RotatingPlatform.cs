@@ -20,13 +20,13 @@ public class RotatingPlatform : MonoBehaviour
     {
         if (Input.GetKeyDown("space"))
         {
-            if (transform.rotation.z == 0 || transform.rotation.z == -360 )
+            if (transform.rotation.eulerAngles.z == 0 || transform.rotation.eulerAngles.z == -360)
             {
                 anim.enabled = true;
-                anim.Play("RotatingPlatform2");
+                anim.Play("RotateTo180");
             }
-            
-            if (transform.rotation.eulerAngles.z > -185 && transform.rotation.eulerAngles.z < -175)
+
+            if (transform.rotation.eulerAngles.z == Mathf.Abs(180f))
             {
                 print("hola");
                 anim.enabled = true;
