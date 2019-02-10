@@ -5,10 +5,13 @@ using UnityEngine.SceneManagement;
 
 public class Spikes : MonoBehaviour
 {
+
+    GameManager gm;
+
     // Start is called before the first frame update
     void Start()
     {
-        
+        gm = FindObjectOfType<GameManager>();
     }
 
     // Update is called once per frame
@@ -21,8 +24,7 @@ public class Spikes : MonoBehaviour
     {
         if (col.gameObject.name == "Player")
         {
-            Destroy(col.gameObject);
-            SceneManager.LoadScene("SampleScene");
+            col.gameObject.transform.position = gm.startingCoordinates;
         }
     }
 }
