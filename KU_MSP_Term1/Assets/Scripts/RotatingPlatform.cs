@@ -20,26 +20,18 @@ public class RotatingPlatform : MonoBehaviour
     {
         if (Input.GetKeyDown("space"))
         {
-            if (transform.rotation.z == 0 || transform.rotation.z == 360 )
+            if (transform.rotation.z == 0 || transform.rotation.z == -360 )
             {
                 anim.enabled = true;
-                anim.Play("RotateTo180");
-                StartCoroutine (DisableAnimator(1));
+                anim.Play("RotatingPlatform2");
             }
             
-            if (transform.rotation.z == -180)
+            if (transform.rotation.eulerAngles.z > -185 && transform.rotation.eulerAngles.z < -175)
             {
                 print("hola");
                 anim.enabled = true;
                 anim.Play("RotatingPlatform2");
-                StartCoroutine(DisableAnimator(1));
             }
         }
-    }
-
-    IEnumerator DisableAnimator(float delay)
-    {
-        yield return new WaitForSeconds(delay);
-        //anim.enabled = false;
     }
 }
