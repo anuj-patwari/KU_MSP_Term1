@@ -9,6 +9,10 @@ public class GameManager : MonoBehaviour
     [SerializeField]
     GameObject player;
 
+    //Gravity Platform Variables
+    public float negativeGravity;
+    public float positiveGravity;
+
     // Start is called before the first frame update
     void Start()
     {

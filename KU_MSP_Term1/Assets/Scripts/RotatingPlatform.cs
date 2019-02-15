@@ -28,7 +28,6 @@ public class RotatingPlatform : MonoBehaviour
 
             if (transform.rotation.eulerAngles.z == Mathf.Abs(180f))
             {
-                print("hola");
                 anim.enabled = true;
                 anim.Play("RotatingPlatform2");
             }

@@ -6,6 +6,7 @@ using UnityEngine.Events;
 public class CharacterController2D : MonoBehaviour
 {
     [SerializeField] private float m_JumpForce = 400f;                          // Amount of force added when the player jumps.
+    [SerializeField] private float n_JumpForce = -400f;                          // Amount of force added when the player jumps upside down.
     [Range(0, 1)] [SerializeField] private float m_CrouchSpeed = .36f;          // Amount of maxSpeed applied to crouching movement. 1 = 100%
     [Range(0, .3f)] [SerializeField] private float m_MovementSmoothing = .05f;  // How much to smooth out the movement
     [SerializeField] private bool m_AirControl = false;                         // Whether or not a player can steer while jumping;
@@ -21,6 +22,8 @@ public class CharacterController2D : MonoBehaviour
     private bool m_FacingRight = true;                                          // For determining which way the player is currently facing.
     private Vector3 m_Velocity = Vector3.zero;
 
+    GameManager gm;
+
     [Header("Events")]
     [Space]
 
@@ -31,6 +34,11 @@ public class CharacterController2D : MonoBehaviour
 
     public BoolEvent OnCrouchEvent;
     private bool m_wasCrouching = false;
+
+    void Start()
+    {
+        gm = FindObjectOfType<GameManager>();
+    }
 
     private void Awake()
     {
@@ -131,7 +139,15 @@ public class CharacterController2D : MonoBehaviour
         {
             // Add a vertical force to the player.
             m_Grounded = false;
-            m_Rigidbody2D.AddForce(new Vector2(0f, m_JumpForce));
+            if (gameObject.GetComponent<Rigidbody2D>().gravityScale == gm.positiveGravity)
+            {
+                m_Rigidbody2D.AddForce(new Vector2(0f, m_JumpForce));
+            }
+
+            else if (gameObject.GetComponent<Rigidbody2D>().gravityScale == gm.negativeGravity)
+            {
+                m_Rigidbody2D.AddForce(new Vector2(0f, n_JumpForce));
+            }
         }
     }
 
