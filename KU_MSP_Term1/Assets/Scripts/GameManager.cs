@@ -16,7 +16,7 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        player.transform.position = startingCoordinates;
+        startingCoordinates = player.transform.position;
     }
 
     // Update is called once per frame
