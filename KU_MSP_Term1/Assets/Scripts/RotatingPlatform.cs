@@ -18,7 +18,7 @@ public class RotatingPlatform : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown("space"))
+        if (Input.GetKeyDown("space") && controller.m_Grounded)
         {
             if (transform.rotation.eulerAngles.z == 0 || transform.rotation.eulerAngles.z == -360)
             {
