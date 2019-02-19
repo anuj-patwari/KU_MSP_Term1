@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 public class Spikes : MonoBehaviour
 {
 
-    GameManager gm;
+    public GameManager gm;
 
     // Start is called before the first frame update
     void Start()
@@ -25,6 +25,7 @@ public class Spikes : MonoBehaviour
         if (col.gameObject.name == "Player")
         {
             col.gameObject.transform.position = gm.startingCoordinates;
+            col.gameObject.GetComponent<Player>().Die();
         }
     }
 }

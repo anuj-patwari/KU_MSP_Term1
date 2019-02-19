@@ -1,11 +1,13 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class Player : MonoBehaviour
 {
 
     public CharacterController2D controller;
+    public static UnityEvent PlayerDied = new UnityEvent();
 
     float horizontalMove = 0f;
 
@@ -37,5 +39,10 @@ public class Player : MonoBehaviour
         //Move character
         controller.Move(horizontalMove * Time.fixedDeltaTime, false, jump);
         jump = false;
+    }
+
+    public void Die()
+    {
+        PlayerDied.Invoke();
     }
 }

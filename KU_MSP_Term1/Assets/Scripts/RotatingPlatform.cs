@@ -6,13 +6,14 @@ public class RotatingPlatform : MonoBehaviour
 {
 
     CharacterController2D controller;
-    Animator anim;
+    public Animator anim;
 
     // Start is called before the first frame update
     void Start()
     {
         controller = FindObjectOfType<CharacterController2D>();
         anim = GetComponent<Animator>();
+        Player.PlayerDied.AddListener(OnPlayerDied);
     }
 
     // Update is called once per frame
@@ -31,6 +32,15 @@ public class RotatingPlatform : MonoBehaviour
                 anim.enabled = true;
                 anim.Play("RotatingPlatform2");
             }
+        }
+    }
+
+    void OnPlayerDied()
+    {
+        if (transform.rotation.eulerAngles.z == Mathf.Abs(180f))
+        {
+            anim.enabled = true;
+            anim.Play("RotatingPlatform2");
         }
     }
 }
