@@ -9,6 +9,8 @@ public class GameManager : MonoBehaviour
     [SerializeField]
     GameObject player;
 
+    public string nextLevel;
+
     //Gravity Platform Variables
     public float negativeGravity;
     public float positiveGravity;
