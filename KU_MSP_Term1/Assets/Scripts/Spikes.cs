@@ -25,6 +25,15 @@ public class Spikes : MonoBehaviour
         if (col.gameObject.name == "Player")
         {
             col.gameObject.transform.position = gm.startingCoordinates;
+            col.gameObject.GetComponent<Rigidbody2D>().gravityScale = gm.currentLevelStartingGravity;
+            if (gm.currentLevelStartingGravity > 0)
+            {
+                col.gameObject.transform.eulerAngles = new Vector3(0, 0, 0);
+            }
+            if (gm.currentLevelStartingGravity < 0)
+            {
+                col.gameObject.transform.eulerAngles = new Vector3(0, 0, 180f);
+            }
             col.gameObject.GetComponent<Player>().Die();
         }
     }

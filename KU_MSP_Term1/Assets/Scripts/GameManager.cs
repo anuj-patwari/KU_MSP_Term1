@@ -12,6 +12,7 @@ public class GameManager : MonoBehaviour
     //Gravity Platform Variables
     public float negativeGravity;
     public float positiveGravity;
+    public float currentLevelStartingGravity = 3f;
 
     // Start is called before the first frame update
     void Start()
