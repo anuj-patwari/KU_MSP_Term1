@@ -8,6 +8,8 @@ public class RotatingPlatform : MonoBehaviour
     CharacterController2D controller;
     JumpDisable jd;
     public Animator anim;
+    public bool placed = false;
+    public GameObject crossButton;
 
     // Start is called before the first frame update
     void Start()
@@ -16,6 +18,14 @@ public class RotatingPlatform : MonoBehaviour
         jd = FindObjectOfType<JumpDisable>();
         anim = GetComponent<Animator>();
         Player.PlayerDied.AddListener(OnPlayerDied);
+        if (placed == true)
+        {
+            crossButton.SetActive(true);
+        }
+        else if (placed == false)
+        {
+            crossButton.SetActive(false);
+        }
     }
 
     // Update is called once per frame

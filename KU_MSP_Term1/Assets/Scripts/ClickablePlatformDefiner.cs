@@ -28,8 +28,9 @@ public class ClickablePlatformDefiner : MonoBehaviour
         {
             position = new Vector2(gameObject.transform.position.x, gameObject.transform.position.y);
             GameObject platformToBePlaced = (GameObject)Instantiate(rotatingPlatform, position, transform.rotation);
-            gameObject.SetActive(false);
+            Destroy(gameObject);
             gm.platformIDNumber = 0;
+            rotatingPlatform.GetComponent<RotatingPlatform>().placed = true;
         }
 
         if (gm.platformIDNumber == 2)
