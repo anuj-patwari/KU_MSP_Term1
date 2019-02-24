@@ -5,12 +5,15 @@ using UnityEngine;
 public class ClickablePlatformDefiner : MonoBehaviour
 {
     public Vector2 position;
-    public GameObject platform;
+    public GameObject rotatingPlatform;
+    public GameObject gravityPlatform;
+
+    GameManager gm;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        gm = FindObjectOfType<GameManager>();
     }
 
     // Update is called once per frame
@@ -21,8 +24,21 @@ public class ClickablePlatformDefiner : MonoBehaviour
 
     private void OnMouseDown()
     {
-        position = new Vector2(gameObject.transform.position.x, gameObject.transform.position.y);
-        GameObject platformToBePlaced = (GameObject)Instantiate(platform, position, transform.rotation);
-        gameObject.SetActive(false);
+        if(gm.platformIDNumber == 1)
+        {
+            position = new Vector2(gameObject.transform.position.x, gameObject.transform.position.y);
+            GameObject platformToBePlaced = (GameObject)Instantiate(rotatingPlatform, position, transform.rotation);
+            gameObject.SetActive(false);
+            gm.platformIDNumber = 0;
+        }
+
+        if (gm.platformIDNumber == 2)
+        {
+            position = new Vector2(gameObject.transform.position.x, gameObject.transform.position.y);
+            GameObject platformToBePlaced = (GameObject)Instantiate(gravityPlatform, position, transform.rotation);
+            gameObject.SetActive(false);
+            gm.platformIDNumber = 0;
+        }
+
     }
 }

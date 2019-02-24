@@ -11,6 +11,8 @@ public class GameManager : MonoBehaviour
 
     public string nextLevel;
 
+    public float platformIDNumber;
+
     //Gravity Platform Variables
     public float negativeGravity;
     public float positiveGravity;
