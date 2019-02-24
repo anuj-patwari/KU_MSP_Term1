@@ -39,6 +39,7 @@ public class ClickablePlatformDefiner : MonoBehaviour
             GameObject platformToBePlaced = (GameObject)Instantiate(gravityPlatform, position, transform.rotation);
             gameObject.SetActive(false);
             gm.platformIDNumber = 0;
+            gravityPlatform.GetComponent<pCheckGravityPlatform>().placed = true;
         }
 
     }
