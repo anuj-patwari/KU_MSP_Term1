@@ -25,7 +25,7 @@ public class DelayedPlatform : MonoBehaviour
     {
         if (col.gameObject.name == "Player")
         {
-            StartCoroutine(DestroyInFiveSeconds(2));
+            StartCoroutine(DestroyInFiveSeconds(1.6f));
         }
     }
 
