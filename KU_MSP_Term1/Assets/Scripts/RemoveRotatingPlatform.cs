@@ -26,7 +26,6 @@ public class RemoveRotatingPlatform : MonoBehaviour
     {
         if (platform.GetComponent<RotatingPlatform>().placed == true)
         {
-            print("xD");
             position = new Vector2(platform.transform.position.x, platform.transform.position.y);
             GameObject platformToBePlaced = (GameObject)Instantiate(platformPlacer, position, transform.rotation);
             Destroy(platform);

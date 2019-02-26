@@ -477,7 +477,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   anim: {fileID: 0}
-  placed: 0
+  placed: 1
   crossButton: {fileID: 602019452}
 --- !u!95 &8956369361837378087
 Animator:
