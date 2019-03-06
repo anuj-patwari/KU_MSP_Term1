@@ -18,18 +18,18 @@ public class DelayedPlatform : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 
     void OnTriggerEnter2D(Collider2D col)
     {
         if (col.gameObject.name == "Player")
         {
-            StartCoroutine(DestroyInFiveSeconds(1.6f));
+            StartCoroutine(DestroyInSeconds(1.6f));
         }
     }
 
-    IEnumerator DestroyInFiveSeconds(float delay)
+    IEnumerator DestroyInSeconds(float delay)
     {
         yield return new WaitForSeconds(delay);
         baseDelayedPlatform.SetActive(false);
@@ -40,5 +40,6 @@ public class DelayedPlatform : MonoBehaviour
     {
         gameObject.GetComponent<BoxCollider2D>().enabled = true;
         baseDelayedPlatform.SetActive(true);
+        StopAllCoroutines();
     }
 }

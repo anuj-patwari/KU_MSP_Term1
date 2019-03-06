@@ -22,6 +22,7 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         startingCoordinates = player.transform.position;
+        platformIDNumber = 0;
     }
 
     // Update is called once per frame
