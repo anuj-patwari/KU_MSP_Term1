@@ -360,7 +360,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e23d1d6478beadf4288598d846788336, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  placed: 0
+  placed: 1
   crossButton: {fileID: 748077583}
 --- !u!1 &7738540738091112429
 GameObject:
