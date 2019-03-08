@@ -360,7 +360,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e23d1d6478beadf4288598d846788336, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  placed: 1
+  placed: 0
   crossButton: {fileID: 748077583}
 --- !u!1 &7738540738091112429
 GameObject:
@@ -388,7 +388,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7738540738091112429}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.6, y: 0, z: 0.018832736}
+  m_LocalPosition: {x: 0.6, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 7738540736515551761}
