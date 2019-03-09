@@ -20,7 +20,7 @@ public class Player : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        controller = FindObjectOfType<CharacterController2D>();
     }
 
     // Update is called once per frame
@@ -34,8 +34,11 @@ public class Player : MonoBehaviour
         {
 
             jump = true;
-            animator.SetBool("IsJumping", true);
 
+            if (controller.m_JumpForce != 0)
+            {
+                animator.SetBool("IsJumping", true);
+            }
         }
     }
 
