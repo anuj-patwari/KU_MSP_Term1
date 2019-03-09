@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 public class Spikes : MonoBehaviour
 {
 
-    public GameManager gm;
+    GameManager gm;
 
     // Start is called before the first frame update
     void Start()

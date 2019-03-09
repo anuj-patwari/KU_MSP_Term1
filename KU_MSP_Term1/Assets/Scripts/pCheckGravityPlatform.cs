@@ -8,10 +8,15 @@ public class pCheckGravityPlatform : MonoBehaviour
     public bool placed = false;
     public GameObject crossButton;
 
+    GameManager gm;
+
     // Start is called before the first frame update
     void Start()
     {
-        if (placed == true)
+        gm = FindObjectOfType<GameManager>();
+        GameManager.PrepPhaseEnded.AddListener(RemoveCrosses);
+        GameManager.PrepPhaseStarted.AddListener(EnableCrosses);
+        if (placed == true && gm.prepPhase == true)
         {
             crossButton.SetActive(true);
         }
@@ -25,5 +30,18 @@ public class pCheckGravityPlatform : MonoBehaviour
     void Update()
     {
         
+    }
+
+    void RemoveCrosses()
+    {
+        crossButton.SetActive(false);
+    }
+
+    void EnableCrosses()
+    {
+        if(placed == true)
+        {
+            crossButton.SetActive(true);
+        }
     }
 }

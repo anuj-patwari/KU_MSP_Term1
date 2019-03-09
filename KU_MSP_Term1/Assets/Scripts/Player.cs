@@ -8,6 +8,7 @@ public class Player : MonoBehaviour
 
     public CharacterController2D controller;
     public static UnityEvent PlayerDied = new UnityEvent();
+    GameManager gm;
 
     public Animator animator;
 
@@ -21,6 +22,8 @@ public class Player : MonoBehaviour
     void Start()
     {
         controller = FindObjectOfType<CharacterController2D>();
+        gm = FindObjectOfType<GameManager>();
+        animator.SetFloat("Speed", 0f);
     }
 
     // Update is called once per frame
@@ -28,7 +31,10 @@ public class Player : MonoBehaviour
     {
         horizontalMove = Input.GetAxisRaw("Horizontal") * runSpeed;
 
-        animator.SetFloat("Speed", Mathf.Abs(horizontalMove));
+        if (gm.prepPhase == false)
+        {
+            animator.SetFloat("Speed", Mathf.Abs(horizontalMove));
+        }
 
         if (Input.GetButtonDown("Jump"))
         {
@@ -37,7 +43,10 @@ public class Player : MonoBehaviour
 
             if (controller.m_JumpForce != 0)
             {
-                animator.SetBool("IsJumping", true);
+                if(gm.prepPhase == false)
+                {
+                    animator.SetBool("IsJumping", true);
+                }
             }
         }
     }
