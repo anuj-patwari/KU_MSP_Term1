@@ -5,7 +5,6 @@ using UnityEngine;
 public class GravityPlatform : MonoBehaviour
 {
     GameManager gm;
-    //public bool placed = false;
 
     // Start is called before the first frame update
     void Start()
@@ -26,7 +25,7 @@ public class GravityPlatform : MonoBehaviour
             if(col.gameObject.GetComponent<Rigidbody2D>().gravityScale == gm.positiveGravity)
             {
                 col.gameObject.GetComponent<Rigidbody2D>().gravityScale = gm.negativeGravity;
-                col.gameObject.transform.eulerAngles = new Vector3(0, 0, 180f);
+                col.gameObject.transform.eulerAngles = new Vector3(0, 180f, 180f);
             }
 
             else if (col.gameObject.GetComponent<Rigidbody2D>().gravityScale == gm.negativeGravity)
