@@ -21,6 +21,7 @@ public class GameManager : MonoBehaviour
     public GameObject inventory;
     public GameObject startButton;
     public GameObject prepPhaseButton;
+    public GameObject canvas;
     
     //Gravity Platform Variables
     public float negativeGravity;
@@ -32,6 +33,7 @@ public class GameManager : MonoBehaviour
     {
         startingCoordinates = player.transform.position;
         platformIDNumber = 0;
+        canvas.SetActive(true);
         prepPhase = true;
         prepPhaseButton.SetActive(false);
         startButton.SetActive(true);
