@@ -14,6 +14,8 @@ public class ClickablePlatformDefiner : MonoBehaviour
     void Start()
     {
         gm = FindObjectOfType<GameManager>();
+        GameManager.PrepPhaseEnded.AddListener(PreparationHasEnded);
+        GameManager.PrepPhaseStarted.AddListener(PreparationHasStarted);
     }
 
     // Update is called once per frame
@@ -42,5 +44,17 @@ public class ClickablePlatformDefiner : MonoBehaviour
             gravityPlatform.GetComponent<pCheckGravityPlatform>().placed = true;
         }
 
+    }
+
+    void PreparationHasEnded()
+    {
+        gameObject.GetComponent<SpriteRenderer>().enabled = false;
+        gameObject.GetComponent<BoxCollider2D>().enabled = false;
+    }
+
+    void PreparationHasStarted()
+    {
+        gameObject.GetComponent<SpriteRenderer>().enabled = true;
+        gameObject.GetComponent<BoxCollider2D>().enabled = true;
     }
 }

@@ -7,8 +7,7 @@ public class GameManager : MonoBehaviour
 {
 
     public Vector2 startingCoordinates;
-    [SerializeField]
-    GameObject player;
+    [SerializeField] GameObject player;
 
     public string nextLevel;
 
@@ -18,10 +17,10 @@ public class GameManager : MonoBehaviour
     public static UnityEvent PrepPhaseEnded = new UnityEvent();
     public static UnityEvent PrepPhaseStarted = new UnityEvent();
     public bool prepPhase;
-    public GameObject inventory;
-    public GameObject startButton;
-    public GameObject prepPhaseButton;
-    public GameObject canvas;
+    [SerializeField] GameObject inventory;
+    [SerializeField] GameObject startButton;
+    [SerializeField] GameObject prepPhaseButton;
+    [SerializeField] GameObject canvas;
     
     //Gravity Platform Variables
     public float negativeGravity;
