@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class RemoveGravityPlatform : MonoBehaviour
+public class RemoveJumpPlatform : MonoBehaviour
 {
     public Vector2 position;
     public GameObject platform;
@@ -22,7 +22,7 @@ public class RemoveGravityPlatform : MonoBehaviour
 
     private void OnMouseDown()
     {
-        if (platform.GetComponent<pCheckGravityPlatform>().placed == true)
+        if (platform.GetComponent<JumpPlatform>().placed == true)
         {
             position = new Vector2(platform.transform.position.x, platform.transform.position.y);
             GameObject platformToBePlaced = (GameObject)Instantiate(platformPlacer, position, transform.rotation);

@@ -5,8 +5,9 @@ using UnityEngine;
 public class ClickablePlatformDefiner : MonoBehaviour
 {
     public Vector2 position;
-    public GameObject rotatingPlatform;
-    public GameObject gravityPlatform;
+    [SerializeField] GameObject rotatingPlatform;
+    [SerializeField] GameObject gravityPlatform;
+    [SerializeField] GameObject jumpPlatform;
 
     GameManager gm;
 
@@ -42,6 +43,15 @@ public class ClickablePlatformDefiner : MonoBehaviour
             gameObject.SetActive(false);
             gm.platformIDNumber = 0;
             gravityPlatform.GetComponent<pCheckGravityPlatform>().placed = true;
+        }
+
+        if (gm.platformIDNumber == 3)
+        {
+            position = new Vector2(gameObject.transform.position.x, gameObject.transform.position.y);
+            GameObject platformToBePlaced = (GameObject)Instantiate(jumpPlatform, position, transform.rotation);
+            Destroy(gameObject);
+            gm.platformIDNumber = 0;
+            jumpPlatform.GetComponent<JumpPlatform>().placed = true;
         }
 
     }

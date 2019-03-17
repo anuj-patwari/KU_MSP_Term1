@@ -124,3 +124,5 @@ MonoBehaviour:
     type: 3}
   gravityPlatform: {fileID: 7738540737844194668, guid: 2388dbfdc7e052440938dd29e3a52b9d,
     type: 3}
+  jumpPlatform: {fileID: 806748274262002445, guid: 0ad1e09913003c242a61a5eee27a5213,
+    type: 3}

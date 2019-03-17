@@ -27,4 +27,9 @@ public class InventoryScript : MonoBehaviour
     {
         gm.platformIDNumber = 2;
     }
+
+    public void PlaceJumpPlatform()
+    {
+        gm.platformIDNumber = 3;
+    }
 }
