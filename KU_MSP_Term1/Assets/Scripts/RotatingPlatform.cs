@@ -62,10 +62,15 @@ public class RotatingPlatform : MonoBehaviour
             anim.Play("RotatingPlatform2");
         }
         
-        else if (transform.rotation.eulerAngles.z == 0 || transform.rotation.eulerAngles.z == -360 && startingRotation == -1)
+        else if (transform.rotation.eulerAngles.z == 0 || transform.rotation.eulerAngles.z == -360)
         {
-            anim.enabled = true;
-            anim.Play("RotateTo180");
+            if (startingRotation == -1)
+            {
+                print("hmmm");
+                anim.enabled = true;
+                anim.Play("RotateTo180");
+            }
+            
         }
     }
 
