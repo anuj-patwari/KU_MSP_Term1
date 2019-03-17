@@ -10,12 +10,14 @@ public class RotatingPlatform : MonoBehaviour
     public Animator anim;
     public bool placed = false;
     public GameObject crossButton;
+    public float startingRotation;
 
     GameManager gm;
 
     // Start is called before the first frame update
     void Start()
     {
+        startingRotation = gameObject.GetComponent<Transform>().rotation.z;
         gm = FindObjectOfType<GameManager>();
         GameManager.PrepPhaseEnded.AddListener(PrepPhaseOff);
         GameManager.PrepPhaseStarted.AddListener(PrepPhaseOn);
@@ -54,10 +56,16 @@ public class RotatingPlatform : MonoBehaviour
 
     void OnPlayerDied()
     {
-        if (transform.rotation.eulerAngles.z == Mathf.Abs(180f))
+        if (transform.rotation.eulerAngles.z == Mathf.Abs(180f) && startingRotation != -1)
         {
             anim.enabled = true;
             anim.Play("RotatingPlatform2");
+        }
+        
+        else if (transform.rotation.eulerAngles.z == 0 || transform.rotation.eulerAngles.z == -360 && startingRotation == -1)
+        {
+            anim.enabled = true;
+            anim.Play("RotateTo180");
         }
     }
 
@@ -73,7 +81,7 @@ public class RotatingPlatform : MonoBehaviour
             crossButton.SetActive(true);
         }
 
-        if(transform.rotation.eulerAngles.z == Mathf.Abs(180f))
+        if(transform.rotation.eulerAngles.z == Mathf.Abs(180f) && startingRotation != -1)
         {
             anim.enabled = true;
             anim.Play("RotatingPlatform2");

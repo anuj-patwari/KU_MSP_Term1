@@ -23,20 +23,9 @@ public class Goal : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D col)
     {
-        if(gm.nextLevel == "Level3")
+        if (col.gameObject.name == "Player")
         {
-            if (col.gameObject.name == "Player" && cc2d.m_Grounded == true)
-            {
-                SceneManager.LoadScene(gm.nextLevel);
-            }
-        }
-
-        else
-        {
-            if (col.gameObject.name == "Player")
-            {
-                SceneManager.LoadScene(gm.nextLevel);
-            }
+            SceneManager.LoadScene(gm.nextLevel);
         }
     }
 }
