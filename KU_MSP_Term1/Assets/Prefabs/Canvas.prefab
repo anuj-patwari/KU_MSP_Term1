@@ -78,7 +78,7 @@ GameObject:
   - component: {fileID: 108051080122615264}
   - component: {fileID: 108051080122615267}
   m_Layer: 5
-  m_Name: Text
+  m_Name: RotatingPlatformText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -175,8 +175,8 @@ RectTransform:
   - {fileID: 108051081762717084}
   - {fileID: 108051080741135781}
   - {fileID: 108051081818007991}
-  - {fileID: 2455780847819976101}
   - {fileID: 108051080985810140}
+  - {fileID: 2455780847819976101}
   m_Father: {fileID: 108051081423505222}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -326,7 +326,7 @@ GameObject:
   - component: {fileID: 108051080431404870}
   - component: {fileID: 108051080431404873}
   m_Layer: 5
-  m_Name: Text
+  m_Name: GravityPlatformText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -723,7 +723,7 @@ RectTransform:
   m_LocalScale: {x: 1.2141, y: 1.2141, z: 1.2141}
   m_Children: []
   m_Father: {fileID: 108051080277887887}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -869,7 +869,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &108051081423505222
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1311,7 +1311,7 @@ GameObject:
   - component: {fileID: 134727712387490378}
   - component: {fileID: 2758466538871754004}
   m_Layer: 5
-  m_Name: Text
+  m_Name: JumpPlatformText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1411,11 +1411,11 @@ RectTransform:
   m_Children:
   - {fileID: 6062300398382480253}
   m_Father: {fileID: 108051080277887887}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: -274, y: -171.09001}
+  m_AnchoredPosition: {x: -287, y: -171.09001}
   m_SizeDelta: {x: 320, y: 64}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1725834226392098000

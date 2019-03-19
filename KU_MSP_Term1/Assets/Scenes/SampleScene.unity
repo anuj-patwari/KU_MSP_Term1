@@ -124,11 +124,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Canvas
       objectReference: {fileID: 0}
-    - target: {fileID: 108051081423505226, guid: 73729469b81acea45b79f38560ef42dc,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 108051081423505222, guid: 73729469b81acea45b79f38560ef42dc,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -244,41 +239,6 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1900940394}
-    - target: {fileID: 2455780847819976101, guid: 73729469b81acea45b79f38560ef42dc,
-        type: 3}
-      propertyPath: m_RootOrder
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 2455780847819976101, guid: 73729469b81acea45b79f38560ef42dc,
-        type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: -287
-      objectReference: {fileID: 0}
-    - target: {fileID: 108051080985810140, guid: 73729469b81acea45b79f38560ef42dc,
-        type: 3}
-      propertyPath: m_RootOrder
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 108051080122615269, guid: 73729469b81acea45b79f38560ef42dc,
-        type: 3}
-      propertyPath: m_Name
-      value: RotatingPlatformText
-      objectReference: {fileID: 0}
-    - target: {fileID: 108051080431404875, guid: 73729469b81acea45b79f38560ef42dc,
-        type: 3}
-      propertyPath: m_Name
-      value: GravityPlatformText
-      objectReference: {fileID: 0}
-    - target: {fileID: 5918466726026511590, guid: 73729469b81acea45b79f38560ef42dc,
-        type: 3}
-      propertyPath: m_Name
-      value: JumpPlatformText
-      objectReference: {fileID: 0}
-    - target: {fileID: 7967406493632065434, guid: 73729469b81acea45b79f38560ef42dc,
-        type: 3}
-      propertyPath: m_RootOrder
-      value: 5
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 73729469b81acea45b79f38560ef42dc, type: 3}
 --- !u!1001 &345707563
@@ -653,9 +613,9 @@ MonoBehaviour:
   startButton: {fileID: 1452240434}
   prepPhaseButton: {fileID: 365171735}
   canvas: {fileID: 710878415}
-  rotatingPlatformCount: 3
-  gravityPlatformCount: 0
-  jumpPlatformCount: 0
+  rotatingPlatformCount: 2
+  gravityPlatformCount: 2
+  jumpPlatformCount: 2
   rotatingPlatformCountText: {fileID: 0}
   gravityPlatformCountText: {fileID: 0}
   jumpPlatformCountText: {fileID: 0}

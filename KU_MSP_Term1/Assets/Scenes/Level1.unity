@@ -1202,6 +1202,12 @@ MonoBehaviour:
   startButton: {fileID: 1850439849}
   prepPhaseButton: {fileID: 1850439848}
   canvas: {fileID: 1850439851}
+  rotatingPlatformCount: 1
+  gravityPlatformCount: 0
+  jumpPlatformCount: 0
+  rotatingPlatformCountText: {fileID: 0}
+  gravityPlatformCountText: {fileID: 0}
+  jumpPlatformCountText: {fileID: 0}
   negativeGravity: -2
   positiveGravity: 3
   currentLevelStartingGravity: 3

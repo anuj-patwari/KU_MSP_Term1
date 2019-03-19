@@ -23,7 +23,7 @@ public class ClickablePlatformDefiner : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        print(gm.rotatingPlatformCount);
+        
     }
 
     private void OnMouseDown()

@@ -7,7 +7,7 @@ using UnityEngine.UI;
 public class GameManager : MonoBehaviour
 {
 
-    public Vector2 startingCoordinates;
+    public Vector3 startingCoordinates;
     [SerializeField] GameObject player;
 
     public string nextLevel;
@@ -23,6 +23,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] GameObject prepPhaseButton;
     [SerializeField] GameObject canvas;
 
+    InventoryCountDefiner invCount;
     public float rotatingPlatformCount;
     public float gravityPlatformCount;
     public float jumpPlatformCount;
@@ -45,10 +46,11 @@ public class GameManager : MonoBehaviour
         prepPhaseButton.SetActive(false);
         startButton.SetActive(true);
 
-        rotatingPlatformCountText = GameObject.Find("RotatingPlatformText");
-        gravityPlatformCountText = GameObject.Find("GravityPlatformText");
-        jumpPlatformCountText = GameObject.Find("JumpPlatformText");
-
+        //Inventory Count Texts Referencing and Printing their texts at start
+        invCount = FindObjectOfType<InventoryCountDefiner>();
+        rotatingPlatformCountText = invCount.rotatingText;
+        gravityPlatformCountText = invCount.gravityText;
+        jumpPlatformCountText = invCount.jumpPlatText;
         rotatingPlatformCountText.GetComponent<Text>().text = rotatingPlatformCount.ToString();
         gravityPlatformCountText.GetComponent<Text>().text = gravityPlatformCount.ToString();
         jumpPlatformCountText.GetComponent<Text>().text = jumpPlatformCount.ToString();
