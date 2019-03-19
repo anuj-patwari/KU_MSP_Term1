@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
@@ -21,7 +22,14 @@ public class GameManager : MonoBehaviour
     [SerializeField] GameObject startButton;
     [SerializeField] GameObject prepPhaseButton;
     [SerializeField] GameObject canvas;
-    
+
+    public float rotatingPlatformCount;
+    public float gravityPlatformCount;
+    public float jumpPlatformCount;
+    public GameObject rotatingPlatformCountText;
+    public GameObject gravityPlatformCountText;
+    public GameObject jumpPlatformCountText;
+
     //Gravity Platform Variables
     public float negativeGravity;
     public float positiveGravity;
@@ -36,6 +44,14 @@ public class GameManager : MonoBehaviour
         prepPhase = true;
         prepPhaseButton.SetActive(false);
         startButton.SetActive(true);
+
+        rotatingPlatformCountText = GameObject.Find("RotatingPlatformText");
+        gravityPlatformCountText = GameObject.Find("GravityPlatformText");
+        jumpPlatformCountText = GameObject.Find("JumpPlatformText");
+
+        rotatingPlatformCountText.GetComponent<Text>().text = rotatingPlatformCount.ToString();
+        gravityPlatformCountText.GetComponent<Text>().text = gravityPlatformCount.ToString();
+        jumpPlatformCountText.GetComponent<Text>().text = jumpPlatformCount.ToString();
     }
 
     // Update is called once per frame

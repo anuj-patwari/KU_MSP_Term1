@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class ClickablePlatformDefiner : MonoBehaviour
 {
@@ -22,36 +23,42 @@ public class ClickablePlatformDefiner : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        print(gm.rotatingPlatformCount);
     }
 
     private void OnMouseDown()
     {
-        if(gm.platformIDNumber == 1)
+        if(gm.platformIDNumber == 1 && gm.rotatingPlatformCount > 0)
         {
             position = new Vector2(gameObject.transform.position.x, gameObject.transform.position.y);
             GameObject platformToBePlaced = (GameObject)Instantiate(rotatingPlatform, position, transform.rotation);
             Destroy(gameObject);
             gm.platformIDNumber = 0;
             rotatingPlatform.GetComponent<RotatingPlatform>().placed = true;
+            gm.rotatingPlatformCount = gm.rotatingPlatformCount - 1;
+            gm.rotatingPlatformCountText.GetComponent<Text>().text = gm.rotatingPlatformCount.ToString();
         }
 
-        if (gm.platformIDNumber == 2)
+        if (gm.platformIDNumber == 2 && gm.gravityPlatformCount > 0)
         {
             position = new Vector2(gameObject.transform.position.x, gameObject.transform.position.y);
             GameObject platformToBePlaced = (GameObject)Instantiate(gravityPlatform, position, transform.rotation);
             gameObject.SetActive(false);
             gm.platformIDNumber = 0;
             gravityPlatform.GetComponent<pCheckGravityPlatform>().placed = true;
+            gm.gravityPlatformCount = gm.gravityPlatformCount - 1;
+            gm.gravityPlatformCountText.GetComponent<Text>().text = gm.gravityPlatformCount.ToString();
         }
 
-        if (gm.platformIDNumber == 3)
+        if (gm.platformIDNumber == 3 && gm.jumpPlatformCount > 0)
         {
             position = new Vector2(gameObject.transform.position.x, gameObject.transform.position.y);
             GameObject platformToBePlaced = (GameObject)Instantiate(jumpPlatform, position, transform.rotation);
             Destroy(gameObject);
             gm.platformIDNumber = 0;
             jumpPlatform.GetComponent<JumpPlatform>().placed = true;
+            gm.jumpPlatformCount = gm.jumpPlatformCount - 1;
+            gm.jumpPlatformCountText.GetComponent<Text>().text = gm.jumpPlatformCount.ToString();
         }
 
     }
