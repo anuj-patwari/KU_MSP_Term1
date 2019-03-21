@@ -7,9 +7,10 @@ using UnityEngine.UI;
 public class GameManager : MonoBehaviour
 {
 
-    public Vector3 startingCoordinates;
+    [HideInInspector]public Vector3 startingCoordinates;
     [SerializeField] GameObject player;
 
+    [Tooltip("Type the name of the intended next level in this field. Do not forget to include that level into the Build Settings.")]
     public string nextLevel;
 
     public float platformIDNumber;
@@ -18,28 +19,48 @@ public class GameManager : MonoBehaviour
     public static UnityEvent PrepPhaseEnded = new UnityEvent();
     public static UnityEvent PrepPhaseStarted = new UnityEvent();
     public bool prepPhase;
+
+
+
+    [Header("Canvas GameObjects")]
     [SerializeField] GameObject inventory;
     [SerializeField] GameObject startButton;
     [SerializeField] GameObject prepPhaseButton;
     [SerializeField] GameObject canvas;
 
+
     InventoryCountDefiner invCount;
+    [Header("Inventory Counters")]
     public float rotatingPlatformCount;
     public float gravityPlatformCount;
     public float jumpPlatformCount;
-    public GameObject rotatingPlatformCountText;
-    public GameObject gravityPlatformCountText;
-    public GameObject jumpPlatformCountText;
+    [HideInInspector]public GameObject rotatingPlatformCountText;
+    [HideInInspector]public GameObject gravityPlatformCountText;
+    [HideInInspector]public GameObject jumpPlatformCountText;
 
+
+    [Header("Gravity Variables")]
     //Gravity Platform Variables
     public float negativeGravity;
     public float positiveGravity;
+    [Range(-2,3)]
     public float currentLevelStartingGravity = 3f;
 
     // Start is called before the first frame update
     void Start()
     {
         startingCoordinates = player.transform.position;
+        player.GetComponent<Rigidbody2D>().gravityScale = currentLevelStartingGravity;
+
+        if (currentLevelStartingGravity < 0)
+        {
+            player.transform.eulerAngles = new Vector3(0, 180f, 180f);
+        }
+        else if (currentLevelStartingGravity > 0)
+        {
+            player.transform.eulerAngles = new Vector3(0, 0, 0);
+        }
+
         platformIDNumber = 0;
         canvas.SetActive(true);
         prepPhase = true;
@@ -89,7 +110,7 @@ public class GameManager : MonoBehaviour
         }
         if (currentLevelStartingGravity < 0)
         {
-            player.transform.eulerAngles = new Vector3(0, 0, 180f);
+            player.transform.eulerAngles = new Vector3(0, 180f, 180f);
         }
     }
 }

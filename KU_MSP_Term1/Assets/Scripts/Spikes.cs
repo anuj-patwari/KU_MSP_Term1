@@ -32,7 +32,7 @@ public class Spikes : MonoBehaviour
             }
             if (gm.currentLevelStartingGravity < 0)
             {
-                col.gameObject.transform.eulerAngles = new Vector3(0, 0, 180f);
+                col.gameObject.transform.eulerAngles = new Vector3(0, 180f, 180f);
             }
             col.gameObject.GetComponent<Player>().Die();
         }
