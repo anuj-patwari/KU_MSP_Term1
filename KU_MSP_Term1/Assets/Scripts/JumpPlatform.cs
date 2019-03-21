@@ -37,7 +37,7 @@ public class JumpPlatform : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown("space") && controller.m_Grounded && jd.jumpEnabled && gm.prepPhase == false)
+        if (Input.GetKeyDown("space") && controller.m_Grounded && controller.m_JumpForce > 0 && gm.prepPhase == false)
         {
             if (jumpCount < 3f)
             {
