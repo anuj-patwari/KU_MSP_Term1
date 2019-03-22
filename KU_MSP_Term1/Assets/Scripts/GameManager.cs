@@ -21,7 +21,7 @@ public class GameManager : MonoBehaviour
     public bool prepPhase;
     public bool hasKey;
 
-
+    Goal goal;
 
     [Header("Canvas GameObjects")]
     [SerializeField] GameObject inventory;
@@ -50,6 +50,7 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        
         startingCoordinates = player.transform.position;
         player.GetComponent<Rigidbody2D>().gravityScale = currentLevelStartingGravity;
 
@@ -76,6 +77,10 @@ public class GameManager : MonoBehaviour
         rotatingPlatformCountText.GetComponent<Text>().text = rotatingPlatformCount.ToString();
         gravityPlatformCountText.GetComponent<Text>().text = gravityPlatformCount.ToString();
         jumpPlatformCountText.GetComponent<Text>().text = jumpPlatformCount.ToString();
+
+        goal = FindObjectOfType<Goal>();
+        goal.getKeyText = invCount.getKeyText;
+        goal.getKeyText.SetActive(false);
     }
 
     // Update is called once per frame

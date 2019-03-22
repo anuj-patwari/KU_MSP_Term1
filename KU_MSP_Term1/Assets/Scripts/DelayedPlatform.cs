@@ -13,6 +13,7 @@ public class DelayedPlatform : MonoBehaviour
     void Start()
     {
         Player.PlayerDied.AddListener(OnPlayerDied);
+        GameManager.PrepPhaseStarted.AddListener(OnPlayerDied);
     }
 
     // Update is called once per frame

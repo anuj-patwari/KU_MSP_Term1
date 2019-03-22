@@ -614,6 +614,7 @@ MonoBehaviour:
   nextLevel: 
   platformIDNumber: 0
   prepPhase: 0
+  hasKey: 0
   inventory: {fileID: 707190326}
   startButton: {fileID: 1452240434}
   prepPhaseButton: {fileID: 365171735}
@@ -706,6 +707,21 @@ PrefabInstance:
     - target: {fileID: 372044546473045494, guid: d75601bc7efe05c43a6a517d4c4e3c5d,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 372044546984678497, guid: d75601bc7efe05c43a6a517d4c4e3c5d,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 372044546984678497, guid: d75601bc7efe05c43a6a517d4c4e3c5d,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 372044546984678497, guid: d75601bc7efe05c43a6a517d4c4e3c5d,
+        type: 3}
+      propertyPath: m_LocalRotation.z
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []

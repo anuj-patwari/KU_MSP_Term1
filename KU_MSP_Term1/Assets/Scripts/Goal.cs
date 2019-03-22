@@ -7,12 +7,15 @@ public class Goal : MonoBehaviour
 {
     GameManager gm;
     CharacterController2D cc2d;
+    InventoryCountDefiner invCount;
+    public GameObject getKeyText;
 
     // Start is called before the first frame update
     void Start()
     {
         gm = FindObjectOfType<GameManager>();
         cc2d = FindObjectOfType<CharacterController2D>();
+        invCount = FindObjectOfType<InventoryCountDefiner>();
     }
 
     // Update is called once per frame
@@ -29,6 +32,18 @@ public class Goal : MonoBehaviour
             {
                 SceneManager.LoadScene(gm.nextLevel);
             }
+
+            else if (gm.hasKey == false)
+            {
+                getKeyText.SetActive(true);
+                StartCoroutine(DeactivateText(3));
+            }
         }
+    }
+
+    IEnumerator DeactivateText(float delay)
+    {
+        yield return new WaitForSeconds(delay);
+        getKeyText.SetActive(false);
     }
 }

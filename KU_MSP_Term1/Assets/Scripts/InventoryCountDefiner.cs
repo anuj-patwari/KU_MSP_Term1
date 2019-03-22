@@ -7,6 +7,7 @@ public class InventoryCountDefiner : MonoBehaviour
     public GameObject rotatingText;
     public GameObject gravityText;
     public GameObject jumpPlatText;
+    public GameObject getKeyText;
 
     // Start is called before the first frame update
     void Start()
