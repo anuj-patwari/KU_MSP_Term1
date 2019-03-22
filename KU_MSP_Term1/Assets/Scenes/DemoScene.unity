@@ -2096,7 +2096,7 @@ MonoBehaviour:
   startButton: {fileID: 1356148629}
   prepPhaseButton: {fileID: 1356148628}
   canvas: {fileID: 1356148627}
-  rotatingPlatformCount: 2
+  rotatingPlatformCount: 1
   gravityPlatformCount: 2
   jumpPlatformCount: 1
   rotatingPlatformCountText: {fileID: 0}
