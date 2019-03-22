@@ -78,6 +78,8 @@ public class GameManager : MonoBehaviour
         gravityPlatformCountText.GetComponent<Text>().text = gravityPlatformCount.ToString();
         jumpPlatformCountText.GetComponent<Text>().text = jumpPlatformCount.ToString();
 
+
+        //Setting the Get Key GameObject to the Goal Script
         goal = FindObjectOfType<Goal>();
         goal.getKeyText = invCount.getKeyText;
         goal.getKeyText.SetActive(false);
