@@ -67,7 +67,6 @@ public class RotatingPlatform : MonoBehaviour
         {
             if (startingRotation == -1)
             {
-                print("hmmm");
                 anim.enabled = true;
                 anim.Play("RotateTo180");
             }

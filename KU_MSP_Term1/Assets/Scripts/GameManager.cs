@@ -19,6 +19,7 @@ public class GameManager : MonoBehaviour
     public static UnityEvent PrepPhaseEnded = new UnityEvent();
     public static UnityEvent PrepPhaseStarted = new UnityEvent();
     public bool prepPhase;
+    public bool hasKey;
 
 
 

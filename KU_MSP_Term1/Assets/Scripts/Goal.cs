@@ -25,7 +25,10 @@ public class Goal : MonoBehaviour
     {
         if (col.gameObject.name == "Player")
         {
-            SceneManager.LoadScene(gm.nextLevel);
+            if(gm.hasKey == true)
+            {
+                SceneManager.LoadScene(gm.nextLevel);
+            }
         }
     }
 }
