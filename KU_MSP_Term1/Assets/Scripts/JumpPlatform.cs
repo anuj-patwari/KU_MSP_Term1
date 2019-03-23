@@ -11,6 +11,9 @@ public class JumpPlatform : MonoBehaviour
     [SerializeField] float jumpCount = 0f;
     [SerializeField] GameObject cross;
 
+    [SerializeField] Sprite transparent;
+    [SerializeField] Sprite normal;
+
     public bool placed;
 
     // Start is called before the first frame update
@@ -47,11 +50,17 @@ public class JumpPlatform : MonoBehaviour
             if (jumpCount == 3f)
             {
                 jumpCount = 0f;
-                gameObject.GetComponent<SpriteRenderer>().enabled = true;
+                gameObject.GetComponent<SpriteRenderer>().sprite = normal;
                 gameObject.GetComponent<BoxCollider2D>().enabled = true;
             }
 
-            if(jumpCount == 1f)
+            if (jumpCount == 2f)
+            {
+                gameObject.GetComponent<SpriteRenderer>().enabled = true;
+                gameObject.GetComponent<SpriteRenderer>().sprite = transparent;
+            }
+
+            if (jumpCount == 1f)
             {
                 StartCoroutine(DisablePlatform(0.1f));
             }
@@ -69,6 +78,7 @@ public class JumpPlatform : MonoBehaviour
     {
         jumpCount = 0f;
         gameObject.GetComponent<SpriteRenderer>().enabled = true;
+        gameObject.GetComponent<SpriteRenderer>().sprite = normal;
         gameObject.GetComponent<BoxCollider2D>().enabled = true;
     }
 
@@ -81,6 +91,7 @@ public class JumpPlatform : MonoBehaviour
     void PreparationHasStarted()
     {
         gameObject.GetComponent<SpriteRenderer>().enabled = true;
+        gameObject.GetComponent<SpriteRenderer>().sprite = normal;
         gameObject.GetComponent<BoxCollider2D>().enabled = true;
         if (placed == true)
         {

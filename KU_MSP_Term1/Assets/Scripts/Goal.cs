@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class Goal : MonoBehaviour
 {
@@ -35,7 +36,7 @@ public class Goal : MonoBehaviour
 
             else if (gm.hasKey == false)
             {
-                getKeyText.SetActive(true);
+                getKeyText.GetComponent<Text>().enabled = true;
                 StartCoroutine(DeactivateText(3));
             }
         }
@@ -44,6 +45,6 @@ public class Goal : MonoBehaviour
     IEnumerator DeactivateText(float delay)
     {
         yield return new WaitForSeconds(delay);
-        getKeyText.SetActive(false);
+        getKeyText.GetComponent<Text>().enabled = false;
     }
 }
