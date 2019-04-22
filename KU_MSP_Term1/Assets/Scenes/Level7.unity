@@ -162,7 +162,7 @@ PrefabInstance:
     - target: {fileID: 4046874332585185245, guid: e3ec544d15ff533498c282279953e447,
         type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4046874332585185245, guid: e3ec544d15ff533498c282279953e447,
         type: 3}
@@ -231,7 +231,7 @@ PrefabInstance:
     - target: {fileID: 6468525450511303914, guid: 88c51bef853a6a640b4dba43afcc86f9,
         type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 6468525450511303914, guid: 88c51bef853a6a640b4dba43afcc86f9,
         type: 3}
@@ -306,7 +306,7 @@ PrefabInstance:
     - target: {fileID: 7727520927648562202, guid: 07313e39e19eb0147af8704131bfd305,
         type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 7727520927648562202, guid: 07313e39e19eb0147af8704131bfd305,
         type: 3}
@@ -446,15 +446,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c3cb13e66749c545aa05d8e30a4f807, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startingCoordinates: {x: 0, y: 0}
+  startingCoordinates: {x: 0, y: 0, z: 0}
   player: {fileID: 879619277}
-  nextLevel: Level3
+  nextLevel: Level8
   platformIDNumber: 0
   prepPhase: 0
+  hasKey: 0
   inventory: {fileID: 1356148630}
   startButton: {fileID: 1356148629}
   prepPhaseButton: {fileID: 1356148628}
   canvas: {fileID: 1356148627}
+  rotatingPlatformCount: 0
+  gravityPlatformCount: 0
+  jumpPlatformCount: 0
+  rotatingPlatformCountText: {fileID: 0}
+  gravityPlatformCountText: {fileID: 0}
+  jumpPlatformCountText: {fileID: 0}
   negativeGravity: -2
   positiveGravity: 3
   currentLevelStartingGravity: 3
@@ -470,7 +477,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1356148626
 PrefabInstance:
@@ -527,7 +534,7 @@ PrefabInstance:
     - target: {fileID: 108051081423505222, guid: 73729469b81acea45b79f38560ef42dc,
         type: 3}
       propertyPath: m_RootOrder
-      value: 5
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 108051081423505222, guid: 73729469b81acea45b79f38560ef42dc,
         type: 3}
@@ -690,7 +697,7 @@ PrefabInstance:
     - target: {fileID: 2721301872973838290, guid: ead772588aa7eae409eb0d3ff13d8147,
         type: 3}
       propertyPath: m_RootOrder
-      value: 4
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 2721301872973838290, guid: ead772588aa7eae409eb0d3ff13d8147,
         type: 3}
