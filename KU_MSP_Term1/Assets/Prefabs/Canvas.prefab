@@ -1474,7 +1474,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Gravity Platform
+  m_Text: Jump Platform
 --- !u!1 &7251190397211528518
 GameObject:
   m_ObjectHideFlags: 0
