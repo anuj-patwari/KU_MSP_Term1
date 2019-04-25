@@ -7,7 +7,7 @@ using UnityEngine.UI;
 public class GameManager : MonoBehaviour
 {
 
-    [HideInInspector]public Vector3 startingCoordinates;
+    [HideInInspector] public Vector3 startingCoordinates;
     [SerializeField] GameObject player;
 
     [Tooltip("Type the name of the intended next level in this field. Do not forget to include that level into the Build Settings.")]
