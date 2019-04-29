@@ -4,10 +4,27 @@ using UnityEngine;
 
 public class GlobalAudioManager : MonoBehaviour
 {
+
+    public static GlobalAudioManager gam;
+
     // Start is called before the first frame update
     void Awake()
     {
-        DontDestroyOnLoad(gameObject);
+        if (gam == null)
+        {
+            DontDestroyOnLoad(gameObject);
+            gam = this;
+        }
+        else if (gam != null)
+        {
+            Destroy(gameObject);
+        }
+        //gameObject.GetComponent<AudioSource>().Play(0);
+    }
+
+    private void Start()
+    {
+        Application.targetFrameRate = 150;
     }
 
     // Update is called once per frame
