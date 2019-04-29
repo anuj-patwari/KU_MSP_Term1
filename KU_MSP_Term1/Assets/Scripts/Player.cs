@@ -40,12 +40,14 @@ public class Player : MonoBehaviour
         {
 
             jump = true;
+            
 
             if (controller.m_JumpForce != 0)
             {
                 if(gm.prepPhase == false)
                 {
                     animator.SetBool("IsJumping", true);
+                    controller.timer = 5;
                 }
             }
         }

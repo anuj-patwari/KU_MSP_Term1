@@ -5,6 +5,8 @@ using UnityEngine.Events;
 
 public class CharacterController2D : MonoBehaviour
 {
+
+    public int timer = 0;
     public float m_JumpForce = 400f;                                            // Amount of force added when the player jumps.
     public float n_JumpForce = -400f;                                           // Amount of force added when the player jumps upside down.
     [Range(0, 1)] [SerializeField] private float m_CrouchSpeed = .36f;          // Amount of maxSpeed applied to crouching movement. 1 = 100%
@@ -53,6 +55,16 @@ public class CharacterController2D : MonoBehaviour
 
     private void FixedUpdate()
     {
+
+        if (timer > 0)
+        {
+            timer--;
+        }
+        else if(timer != 0)
+        {
+            timer = 0;
+        }
+
         bool wasGrounded = m_Grounded;
         m_Grounded = false;
 
@@ -64,8 +76,10 @@ public class CharacterController2D : MonoBehaviour
             if (colliders[i].gameObject != gameObject)
             {
                 m_Grounded = true;
-                if (!wasGrounded)
+                if (!wasGrounded && timer == 0)
+                {
                     OnLandEvent.Invoke();
+                }
             }
         }
     }
