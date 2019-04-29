@@ -1215,7 +1215,7 @@ MonoBehaviour:
   prepPhaseButton: {fileID: 1356148628}
   canvas: {fileID: 1356148627}
   rotatingPlatformCount: 1
-  gravityPlatformCount: 1
+  gravityPlatformCount: 0
   jumpPlatformCount: 1
   rotatingPlatformCountText: {fileID: 0}
   gravityPlatformCountText: {fileID: 0}
@@ -1378,6 +1378,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: StartPrepPhase
+      objectReference: {fileID: 0}
+    - target: {fileID: 108051081818007990, guid: 73729469b81acea45b79f38560ef42dc,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 73729469b81acea45b79f38560ef42dc, type: 3}
