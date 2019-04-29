@@ -19,7 +19,6 @@ public class GlobalAudioManager : MonoBehaviour
         {
             Destroy(gameObject);
         }
-        //gameObject.GetComponent<AudioSource>().Play(0);
     }
 
     private void Start()
