@@ -29,6 +29,7 @@ public class GlobalAudioManager : MonoBehaviour
 
     private void Start()
     {
+        ReloadSavedGame();
         Application.targetFrameRate = 150;
     }
 
@@ -55,6 +56,19 @@ public class GlobalAudioManager : MonoBehaviour
 
         bf.Serialize(file, data);
         file.Close();
+    }
+
+    public void ReloadSavedGame()
+    {
+        if (File.Exists(Application.persistentDataPath + "/playerInfo.dat"))
+        {
+            BinaryFormatter bf = new BinaryFormatter();
+            FileStream file = File.Open(Application.persistentDataPath + "/playerInfo.dat", FileMode.Open);
+            PlayerData data = (PlayerData)bf.Deserialize(file);
+            file.Close();
+
+            levelsCompleted = data.levelsCompleted;
+        }
     }
 
     public void LoadGame()

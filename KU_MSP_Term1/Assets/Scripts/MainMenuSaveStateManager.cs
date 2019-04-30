@@ -28,7 +28,7 @@ public class MainMenuSaveStateManager : MonoBehaviour
             mainGroup.SetActive(true);
         }
 
-        if (gam.levelsCompleted == 0)
+       if (gam.levelsCompleted == 0)
         {
             saveStateGroup.SetActive(false);
             mainGroup.SetActive(true);
