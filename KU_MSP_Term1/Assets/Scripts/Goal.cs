@@ -11,9 +11,12 @@ public class Goal : MonoBehaviour
     InventoryCountDefiner invCount;
     public GameObject getKeyText;
 
+    GlobalAudioManager gam;
+
     // Start is called before the first frame update
     void Start()
     {
+        gam = FindObjectOfType<GlobalAudioManager>();
         gm = FindObjectOfType<GameManager>();
         cc2d = FindObjectOfType<CharacterController2D>();
         invCount = FindObjectOfType<InventoryCountDefiner>();
@@ -27,19 +30,29 @@ public class Goal : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D col)
     {
-        if (col.gameObject.name == "Player")
+        if (gm.levelNumber != 10)
         {
-            if(gm.hasKey == true)
+            if (col.gameObject.name == "Player")
             {
-                SceneManager.LoadScene(gm.nextLevel);
-            }
+                if (gm.hasKey == true)
+                {
+                    SceneManager.LoadScene(gm.nextLevel);
+                    gam.levelsCompleted = gm.levelNumber;
+                    gam.SaveGame();
+                }
 
-            else if (gm.hasKey == false)
-            {
-                getKeyText.GetComponent<Text>().enabled = true;
-                StartCoroutine(DeactivateText(3));
+                else if (gm.hasKey == false)
+                {
+                    getKeyText.GetComponent<Text>().enabled = true;
+                    StartCoroutine(DeactivateText(3));
+                }
             }
         }
+        else if (gm.levelNumber == 10)
+        {
+            SceneManager.LoadScene("Credits");
+        }
+        
     }
 
     IEnumerator DeactivateText(float delay)
