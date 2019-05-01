@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class HowToPlayManager : MonoBehaviour
 {
@@ -8,6 +9,7 @@ public class HowToPlayManager : MonoBehaviour
     [SerializeField] GameObject rightButton;
     [SerializeField] GameObject howToPlayText;
     [SerializeField] GameObject controlsText;
+    [SerializeField] GameObject letsGoButton;
 
     private int menuNumber;
 
@@ -18,6 +20,7 @@ public class HowToPlayManager : MonoBehaviour
         leftButton.SetActive(false);
         howToPlayText.SetActive(true);
         controlsText.SetActive(false);
+        letsGoButton.SetActive(false);
         rightButton.SetActive(true);
     }
 
@@ -34,6 +37,7 @@ public class HowToPlayManager : MonoBehaviour
             rightButton.SetActive(false);
             howToPlayText.SetActive(false);
             controlsText.SetActive(true);
+            letsGoButton.SetActive(true);
             leftButton.SetActive(true);
             menuNumber = 2;
         }
@@ -43,8 +47,14 @@ public class HowToPlayManager : MonoBehaviour
             leftButton.SetActive(false);
             howToPlayText.SetActive(true);
             controlsText.SetActive(false);
+            letsGoButton.SetActive(false);
             rightButton.SetActive(true);
             menuNumber = 1;
         }
+    }
+
+    public void StartGame()
+    {
+        SceneManager.LoadScene("Level1");
     }
 }

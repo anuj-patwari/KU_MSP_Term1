@@ -28,7 +28,10 @@ public class MainMenuManager : MonoBehaviour
 
         if (timer == 0)
         {
-            gameObject.GetComponent<MainMenuSaveStateManager>().enabled = true;
+            if (SceneManager.GetActiveScene().name == "MainMenu")
+            {
+                gameObject.GetComponent<MainMenuSaveStateManager>().enabled = true;
+            }
         }
     }
 
