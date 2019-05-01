@@ -85,7 +85,7 @@ public class GameManager : MonoBehaviour
         //Setting the Get Key GameObject to the Goal Script
         goal = FindObjectOfType<Goal>();
         goal.getKeyText = invCount.getKeyText;
-        goal.getKeyText.GetComponent<Text>().enabled = false;
+        goal.getKeyText.GetComponent<Image>().enabled = false;
     }
 
     // Update is called once per frame

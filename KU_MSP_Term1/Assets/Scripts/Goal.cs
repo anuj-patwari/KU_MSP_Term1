@@ -43,7 +43,7 @@ public class Goal : MonoBehaviour
 
                 else if (gm.hasKey == false)
                 {
-                    getKeyText.GetComponent<Text>().enabled = true;
+                    getKeyText.GetComponent<Image>().enabled = true;
                     StartCoroutine(DeactivateText(3));
                 }
             }
@@ -58,6 +58,6 @@ public class Goal : MonoBehaviour
     IEnumerator DeactivateText(float delay)
     {
         yield return new WaitForSeconds(delay);
-        getKeyText.GetComponent<Text>().enabled = false;
+        getKeyText.GetComponent<Image>().enabled = false;
     }
 }
