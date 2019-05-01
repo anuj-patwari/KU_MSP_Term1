@@ -41,7 +41,6 @@ public class GlobalAudioManager : MonoBehaviour
             if (File.Exists(Application.persistentDataPath + "/playerInfo.dat"))
             {
                 File.Delete(Application.persistentDataPath + "/playerInfo.dat");
-                Debug.Log("Deleted");
             }
         }
     }

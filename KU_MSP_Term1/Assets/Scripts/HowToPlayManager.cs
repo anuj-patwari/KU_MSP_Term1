@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using System.IO;
 
 public class HowToPlayManager : MonoBehaviour
 {
@@ -13,9 +14,13 @@ public class HowToPlayManager : MonoBehaviour
 
     private int menuNumber;
 
+    GlobalAudioManager gam;
+
     // Start is called before the first frame update
     void Start()
     {
+        gam = FindObjectOfType<GlobalAudioManager>();
+
         menuNumber = 1;
         leftButton.SetActive(false);
         howToPlayText.SetActive(true);
@@ -55,6 +60,13 @@ public class HowToPlayManager : MonoBehaviour
 
     public void StartGame()
     {
-        SceneManager.LoadScene("Level1");
+        if (File.Exists(Application.persistentDataPath + "/playerInfo.dat"))
+        {
+            gam.LoadGame();
+        }
+        else
+        {
+            SceneManager.LoadScene("Level1");
+        }
     }
 }
