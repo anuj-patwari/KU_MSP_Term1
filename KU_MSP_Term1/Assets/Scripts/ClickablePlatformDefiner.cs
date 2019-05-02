@@ -18,12 +18,20 @@ public class ClickablePlatformDefiner : MonoBehaviour
         gm = FindObjectOfType<GameManager>();
         GameManager.PrepPhaseEnded.AddListener(PreparationHasEnded);
         GameManager.PrepPhaseStarted.AddListener(PreparationHasStarted);
+        gameObject.GetComponent<Animator>().enabled = false;
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        if (gm.prepPhase = true && gm.platformIDNumber != 0)
+        {
+            gameObject.GetComponent<Animator>().enabled = true;
+        }
+        else if (gm.prepPhase = true && gm.platformIDNumber == 0)
+        {
+            gameObject.GetComponent<Animator>().enabled = false;
+        }
     }
 
     private void OnMouseDown()

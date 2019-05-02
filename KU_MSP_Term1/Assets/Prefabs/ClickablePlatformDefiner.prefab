@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 3434696023712968580}
   - component: {fileID: 3434696023712968583}
   - component: {fileID: 3434696023712968582}
+  - component: {fileID: 7034601231387560223}
   m_Layer: 9
   m_Name: ClickablePlatformDefiner
   m_TagString: Untagged
@@ -126,3 +127,22 @@ MonoBehaviour:
     type: 3}
   jumpPlatform: {fileID: 806748274262002445, guid: 0ad1e09913003c242a61a5eee27a5213,
     type: 3}
+--- !u!95 &7034601231387560223
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3434696023712968313}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 2f28673d8297fed44815bd21efa020a3, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
