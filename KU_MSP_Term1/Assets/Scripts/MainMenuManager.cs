@@ -17,13 +17,13 @@ public class MainMenuManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (timer > 0)
+        if (timer > -1)
         {
             timer--;
         }
         else if (timer != 0)
         {
-            timer = 0;
+            //timer = 0;
         }
 
         if (timer == 0)
