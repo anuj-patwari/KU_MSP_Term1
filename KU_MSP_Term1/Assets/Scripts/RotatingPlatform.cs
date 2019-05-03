@@ -70,7 +70,6 @@ public class RotatingPlatform : MonoBehaviour
                 anim.enabled = true;
                 anim.Play("RotateTo180");
             }
-            
         }
     }
 
@@ -90,6 +89,15 @@ public class RotatingPlatform : MonoBehaviour
         {
             anim.enabled = true;
             anim.Play("RotatingPlatform2");
+        }
+
+        else if (transform.rotation.eulerAngles.z == 0 || transform.rotation.eulerAngles.z == -360)
+        {
+            if (startingRotation == -1)
+            {
+                anim.enabled = true;
+                anim.Play("RotateTo180");
+            }
         }
     }
 }
