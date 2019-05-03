@@ -2194,6 +2194,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b3989ddd931213c4493310490ce3d385, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  deaths: 0
   levelsCompleted: 0
 --- !u!4 &1654075829
 Transform:
