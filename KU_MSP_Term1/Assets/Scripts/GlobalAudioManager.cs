@@ -11,6 +11,7 @@ public class GlobalAudioManager : MonoBehaviour
 
     public static GlobalAudioManager gam;
 
+    public int deaths;
     public int levelsCompleted;
 
     // Start is called before the first frame update
@@ -52,6 +53,7 @@ public class GlobalAudioManager : MonoBehaviour
         PlayerData data = new PlayerData();
 
         data.levelsCompleted = levelsCompleted;
+        data.deaths = deaths;
 
         bf.Serialize(file, data);
         file.Close();
@@ -67,6 +69,7 @@ public class GlobalAudioManager : MonoBehaviour
             file.Close();
 
             levelsCompleted = data.levelsCompleted;
+            deaths = data.deaths;
         }
     }
 
@@ -80,8 +83,13 @@ public class GlobalAudioManager : MonoBehaviour
             file.Close();
 
             levelsCompleted = data.levelsCompleted;
+            deaths = data.deaths;
 
-            if (levelsCompleted == 1)
+            if (levelsCompleted == 0)
+            {
+                SceneManager.LoadScene("Level1");
+            }
+            else if (levelsCompleted == 1)
             {
                 SceneManager.LoadScene("Level2");
             }
@@ -124,6 +132,7 @@ public class GlobalAudioManager : MonoBehaviour
     public void NewGame()
     {
         levelsCompleted = 0;
+        deaths = 0;
         SaveGame();
         SceneManager.LoadScene("Level1");
     }
@@ -133,4 +142,5 @@ public class GlobalAudioManager : MonoBehaviour
 class PlayerData
 {
     public int levelsCompleted;
+    public int deaths;
 }

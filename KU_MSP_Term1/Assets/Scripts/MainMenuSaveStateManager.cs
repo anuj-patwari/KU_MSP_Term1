@@ -16,10 +16,15 @@ public class MainMenuSaveStateManager : MonoBehaviour
         gam = FindObjectOfType<GlobalAudioManager>();
         if (File.Exists(Application.persistentDataPath + "/playerInfo.dat"))
         {
-            if (gam.levelsCompleted > 0)
+            if (gam.levelsCompleted > 0 || gam.deaths > 0)
             {
                 saveStateGroup.SetActive(true);
                 mainGroup.SetActive(false);
+            }
+            else if (gam.levelsCompleted == 0 && gam.deaths == 0)
+            {
+                saveStateGroup.SetActive(false);
+                mainGroup.SetActive(true);
             }
         }
         else
@@ -28,11 +33,11 @@ public class MainMenuSaveStateManager : MonoBehaviour
             mainGroup.SetActive(true);
         }
 
-       if (gam.levelsCompleted == 0)
+       /*if (gam.levelsCompleted == 0)
         {
             saveStateGroup.SetActive(false);
             mainGroup.SetActive(true);
-        }
+        }*/
     }
 
     // Update is called once per frame

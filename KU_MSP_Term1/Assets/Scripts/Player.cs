@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
+using System.IO;
 
 public class Player : MonoBehaviour
 {
@@ -9,6 +10,7 @@ public class Player : MonoBehaviour
     public CharacterController2D controller;
     public static UnityEvent PlayerDied = new UnityEvent();
     GameManager gm;
+    GlobalAudioManager gam;
 
     public Animator animator;
 
@@ -23,6 +25,7 @@ public class Player : MonoBehaviour
     {
         controller = FindObjectOfType<CharacterController2D>();
         gm = FindObjectOfType<GameManager>();
+        gam = FindObjectOfType<GlobalAudioManager>();
         animator.SetFloat("Speed", 0f);
     }
 
@@ -67,6 +70,8 @@ public class Player : MonoBehaviour
 
     public void Die()
     {
+        gam.deaths++;
+        gam.SaveGame();
         PlayerDied.Invoke();
     }
 }
