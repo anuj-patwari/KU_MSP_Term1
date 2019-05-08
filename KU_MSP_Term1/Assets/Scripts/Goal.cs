@@ -37,7 +37,10 @@ public class Goal : MonoBehaviour
                 if (gm.hasKey == true)
                 {
                     SceneManager.LoadScene(gm.nextLevel);
-                    gam.levelsCompleted = gm.levelNumber;
+                    if(gm.levelNumber > gam.levelsCompleted)
+                    {
+                        gam.levelsCompleted = gm.levelNumber;
+                    }
                     gam.SaveGame();
                 }
 

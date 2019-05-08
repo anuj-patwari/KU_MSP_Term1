@@ -54,7 +54,6 @@ public class MainMenuSaveStateManager : MonoBehaviour
 
     public void LoadGame()
     {
-        //gam.LoadGame();
         SceneManager.LoadScene("LevelSelect");
     }
 
