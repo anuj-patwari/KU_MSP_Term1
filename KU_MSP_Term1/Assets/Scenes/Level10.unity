@@ -2017,12 +2017,6 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4807403255051660573, guid: 73729469b81acea45b79f38560ef42dc,
-        type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 21300000, guid: 4df7369ea5db19249a552eb6e5bc95c4,
-        type: 3}
     - target: {fileID: 6357424820389039515, guid: 73729469b81acea45b79f38560ef42dc,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -2158,6 +2152,17 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: StartPrepPhase
       objectReference: {fileID: 0}
+    - target: {fileID: 6064110529996195769, guid: 73729469b81acea45b79f38560ef42dc,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4807403255051660573, guid: 73729469b81acea45b79f38560ef42dc,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 4df7369ea5db19249a552eb6e5bc95c4,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 73729469b81acea45b79f38560ef42dc, type: 3}
 --- !u!1 &1356148627 stripped
