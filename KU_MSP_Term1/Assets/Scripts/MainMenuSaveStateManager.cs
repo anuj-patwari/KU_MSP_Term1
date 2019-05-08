@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using System.IO;
+using UnityEngine.SceneManagement;
 
 public class MainMenuSaveStateManager : MonoBehaviour
 {
@@ -53,7 +54,8 @@ public class MainMenuSaveStateManager : MonoBehaviour
 
     public void LoadGame()
     {
-        gam.LoadGame();
+        //gam.LoadGame();
+        SceneManager.LoadScene("LevelSelect");
     }
 
 }
